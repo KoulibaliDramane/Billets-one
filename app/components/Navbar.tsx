@@ -1,10 +1,11 @@
 import Image from "next/image";
+import AnimatedLink from "@/app/components/AnimatedLink";
 
 const Navbar = () => {
 
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark flex justify-between m-10">
-            <div className="flex items-center">
+        <nav className="flex justify-between w-full">
+            <div className="flex items-center m-2">
                 <Image
                     src="/onelogo.svg" // Chemin relatif au dossier /public
                     alt="Logo de l'entreprise"
@@ -15,14 +16,16 @@ const Navbar = () => {
             </div>
             <div>
                 <ul className="flex justify-between gap-x-5">
-                    <li><a href="">accueil</a></li>
-                    <li><a href="./contacts">contacts</a></li>
-                    <li><a href="./a-propos">A propos</a></li>
+                    <li><AnimatedLink href="./">Acceuil</AnimatedLink></li>
+                    <li><AnimatedLink href="./contacts">Contacts</AnimatedLink></li>
+                    <li><AnimatedLink href="./a-propos">A propos</AnimatedLink></li>
                 </ul>
             </div>
             <div className="flex space-x-4">
-                <button className=" border border-white p-2 rounded-full hover:bg-gray-700 hover:text-white transition duration-300 hover:cursor-pointer">Creer un compte</button>
-                <button className=" border border-white text-black bg-white p-2 rounded-full hover:bg-gray-700 hover:text-white transition duration-300 hover:cursor-pointer">Se connecter</button>
+                <ul className="flex justify-between gap-x-5">
+                    <li><AnimatedLink href="#">Creer un compte</AnimatedLink></li> |
+                    <li><AnimatedLink href="#">Se connecter</AnimatedLink></li>
+                </ul>
             </div>
         </nav>
     );
